@@ -1,14 +1,13 @@
-FROM node:22-alpine3.19
+FROM node:16-alpine
 
 WORKDIR /app
 
 COPY package*.json /app
 
-RUN npm install 
+RUN npm install
 
 COPY . .
 
-ENV PORT=3000\NAME=MOHAMED
+ENV PORT=3000
 
-
-CMD ["node","app.js"]
+CMD [ "node","app.js" ]

@@ -3,6 +3,10 @@ const db = require("../config/database_config");
 const { success, failed } = require("../helpers/responses");
 const route = express.Router();
 
+route.get("/:name", (req, res) => {
+  return res.send(`Hello ${req.params.name}`);
+});
+
 route.get("/", async (req, res) => {
   try {
     const [result] = await db.query("SELECT * FROM bus_route");
